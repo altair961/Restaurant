@@ -23,6 +23,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: get sources
         uses: actions/checkout@v4
+        
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
 
       - name: Setup NodeJS
         uses: actions/setup-node@v4
