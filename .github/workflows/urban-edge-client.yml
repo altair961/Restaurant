@@ -45,3 +45,14 @@ jobs:
         with:
           name: artifact
           path: src/dist
+  # This is a job called "deploy" 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main'}} # if the branch that we commit to is main then we run "deploy"
+    steps:
+      - name: say hello
+        run: echo "hello from build_deploy"
+      
+      - name: show branch name that initiated the workflow
+        run: echo 'branch name:' ${{ github.ref }}
