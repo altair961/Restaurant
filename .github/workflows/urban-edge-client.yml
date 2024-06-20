@@ -41,7 +41,7 @@ jobs:
         working-directory: urban-edge
         run: npm run build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: artifact
           path: src/dist
