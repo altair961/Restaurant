@@ -74,6 +74,6 @@ jobs:
       #   run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/anakin-skywalker/myFolder
       - name: List files in the repository
         run: |
-          ls ../
+          ls ./urban-edge
       - name: Deploy with rsync
-        run: rsync -avz ../ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/anakin-skywalker/dist/
+        run: rsync -avz ./urban-edge ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/anakin-skywalker/dist/
