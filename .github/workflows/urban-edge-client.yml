@@ -57,7 +57,7 @@ jobs:
       - name: show branch name that initiated the workflow
         run: echo 'branch name:' ${{ github.ref }}
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: artifact
 
