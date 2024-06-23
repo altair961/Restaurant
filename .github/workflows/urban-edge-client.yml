@@ -57,6 +57,10 @@ jobs:
       - name: show branch name that initiated the workflow
         run: echo 'branch name:' ${{ github.ref }}
 
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact
+
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
