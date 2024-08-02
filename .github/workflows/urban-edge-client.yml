@@ -36,6 +36,17 @@ jobs:
       - name: build
         run: dotnet build Restaurant --configuration release
       
+      - name: List files in the repository
+        run: |
+          ls .
+      
+      - name: publish
+        run: dotnet publish "./Restaurant.sln" -c Release -o ./publish
+
+      - name: List files in the repository
+        run: |
+          ls .
+
       - uses: actions/upload-artifact@v4
         with:
           name: artifact
@@ -51,13 +62,6 @@ jobs:
       
       - name: show branch name that initiated the workflow
         run: echo 'branch name:' ${{ github.ref }}
-      
-      - name: List files in the repository
-        run: |
-          ls .
-      
-      - name: publish
-        run: dotnet publish "./Restaurant.sln" -c Release -o ./publish
 
       - uses: actions/download-artifact@v4
         with:
