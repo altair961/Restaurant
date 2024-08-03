@@ -39,7 +39,15 @@ jobs:
       - name: List files in the repository
         run: |
           ls .
-      
+
+      - name: cd Restaurant
+        run: |
+          cd Restaurant
+
+      - name: List files in the repository
+        run: |
+          ls .
+          
       - name: publish
         run: dotnet publish -c Release --output ./Release
 
