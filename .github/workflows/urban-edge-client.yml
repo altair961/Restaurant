@@ -41,7 +41,7 @@ jobs:
           ls .
       
       - name: publish
-        run: dotnet publish "./Restaurant/Restaurant.sln" -c Release -o ./publish
+        run: dotnet publish -c Release --output ./Release
 
       - name: List files in the repository ./Restaurant
         run: |
