@@ -41,7 +41,7 @@ jobs:
           ls .
 
       - name: publish
-        run: dotnet publish "./Restaurant/Restaurant.csproj" -c Release -o ./publish 
+        run: dotnet publish "./Restaurant/Restaurant/Restaurant.csproj" -c Release -o ./publish 
       - name: List files in the repository ./Restaurant
         run: |
           ls ./Restaurant
