@@ -50,7 +50,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: artifact
-          path: ./publish
+          path: .
           
   # This is a job called "deploy" 
   deploy:
