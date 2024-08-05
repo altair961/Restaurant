@@ -43,9 +43,9 @@ jobs:
       - name: publish
         run: dotnet publish "./Restaurant/Restaurant/Restaurant.csproj" -c Release -o ./publish 
       
-      - name: List files in the repository ./Restaurant
+      - name: List files in the repository .
         run: |
-          ls ./Restaurant
+          ls .
 
       - uses: actions/upload-artifact@v4
         with:
