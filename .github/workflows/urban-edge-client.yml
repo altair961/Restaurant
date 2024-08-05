@@ -42,6 +42,7 @@ jobs:
 
       - name: publish
         run: dotnet publish "./Restaurant/Restaurant/Restaurant.csproj" -c Release -o ./publish 
+      
       - name: List files in the repository ./Restaurant
         run: |
           ls ./Restaurant
@@ -49,7 +50,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: artifact
-          path: Restaurant
+          path: .
+          
   # This is a job called "deploy" 
   deploy:
     needs: build
