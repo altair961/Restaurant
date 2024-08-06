@@ -26,7 +26,7 @@ jobs:
 
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/Restaurant
 
       - name: Build the Docker image
         working-directory: Restaurant/Restaurant
