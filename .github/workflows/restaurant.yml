@@ -42,7 +42,7 @@ jobs:
         run: docker push altair961/restaurant
 
       - name: Pull the image to VM
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
