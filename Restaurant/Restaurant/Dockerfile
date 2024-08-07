@@ -8,15 +8,14 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Restaurant/Restaurant.csproj", "Restaurant/"]
-RUN dotnet restore "./Restaurant/Restaurant.csproj"
+COPY ["Restaurant.csproj", "."]
+RUN dotnet restore "./Restaurant.csproj"
 COPY . .
-WORKDIR "/src/Restaurant"
-RUN dotnet build "./Restaurant.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "Restaurant.csproj" -c Release -o /app/build
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Restaurant.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Restaurant.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
