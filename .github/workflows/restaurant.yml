@@ -51,4 +51,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/restaurant:latest         
             docker stop restaurant || true
             docker rm restaurant || true
-            docker run -d -p 80:5272 --name restaurant ${{ secrets.DOCKERHUB_USERNAME }}/restaurant:latest
+            docker run -d -p 80:8080 --name restaurant ${{ secrets.DOCKERHUB_USERNAME }}/restaurant:latest
