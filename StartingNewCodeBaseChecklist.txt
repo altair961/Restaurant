@@ -1,8 +1,3 @@
-Use Git.
-Automate the build.
-Turn on all error messages.
-Treat warnings as errors both on debug and release.
-CI build should work in Release mode.
-Automate deployment to some webserver. That would be your production environment.
-production/master (and not develop) branch should trigger CI.
-Enable static code analysers (linters). They will force style rules.
+[Done] Use Git.
+[Done] Automate the build. 
+[] Turn on all error messages.
