@@ -6,16 +6,16 @@ WORKDIR /app
 EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
+ARG BUILD_CONFIGURATION=Development
 WORKDIR /src
 COPY ["Restaurant.RestApi.csproj", "."]
 RUN dotnet restore "./Restaurant.RestApi.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Restaurant.RestApi.csproj" -c Release -o /app/build
+RUN dotnet build "Restaurant.RestApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Restaurant.RestApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Restaurant.RestApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
