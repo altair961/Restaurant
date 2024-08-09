@@ -8,16 +8,16 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Restaurant.csproj", "."]
-RUN dotnet restore "./Restaurant.csproj"
+COPY ["Restaurant.RestApi.csproj", "."]
+RUN dotnet restore "./Restaurant.RestApi.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Restaurant.csproj" -c Release -o /app/build
+RUN dotnet build "Restaurant.RestApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Restaurant.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Restaurant.RestApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Restaurant.dll"]
+ENTRYPOINT ["dotnet", "Restaurant.RestApi.dll"]
