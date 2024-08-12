@@ -1,5 +1,5 @@
 [Done] Use Git.
 [Done] Automate the build. 
-[] Treat all warnings as errors for Debug and for Release
-[] Turn on the roslyn code analyzers (Perhaps stronger level than standard)
+[Done] Treat all warnings as errors for Debug and for Release
 [] Enable nullable reference types feature
+[] Turn on the roslyn code analyzers (Perhaps stronger level than standard)
