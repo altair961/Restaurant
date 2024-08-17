@@ -1,0 +1,10 @@
+[*.{cs,vb}]
+
+# Default severity for analyzer diagnostics with category 'Style' (escalated to build warnings)
+dotnet_analyzer_diagnostic.category-Style.severity = error
+
+# IDE0008: Use explicit type instead of var
+dotnet_diagnostic.IDE0008.severity = silent
+
+# IDE0007: Use var instead of explicit type
+dotnet_diagnostic.IDE0007.severity = error
