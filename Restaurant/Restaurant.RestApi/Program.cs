@@ -1,4 +1,3 @@
-
 namespace Restaurant.RestApi
 {
     public static class Program
